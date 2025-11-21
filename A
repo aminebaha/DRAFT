@@ -1,32 +1,21 @@
 {
-  "type": "toplist",
-  "title": "Synthetic Tests Inventory",
-  "requests": [
-    {
-      "q": "sum:synthetics.test_runs{*} by {test_name,env,team,status}",
-      "aggregator": "sum",
-      "display_type": "bars",
-      "conditional_formats": [
-        {
-          "comparator": ">",
-          "value": 0,
-          "palette": "green_on_white"
-        },
-        {
-          "comparator": "<=",
-          "value": 0,
-          "palette": "red_on_white"
-        }
-      ]
-    }
-  ],
+  "definition": {
+    "type": "toplist",
+    "requests": [
+      {
+        "queries": [
+          {
+            "query": "sum:synthetics.test_runs{*} by {test_name,env,team,status}"
+          }
+        ]
+      }
+    ],
+    "title": "Synthetic Tests Inventory"
+  },
   "layout": {
     "x": 0,
     "y": 0,
     "width": 47,
-    "height": 14
-  },
-  "template_variables": [],
-  "show_legend": true,
-  "show_values": true
+    "height": 15
+  }
 }
