@@ -1,21 +1,24 @@
 {
+  "id": 123456789,
   "definition": {
+    "title": "Synthetic Tests Inventory",
+    "title_size": "16",
+    "title_align": "left",
     "type": "toplist",
     "requests": [
       {
         "queries": [
           {
-            "query": "sum:synthetics.test_runs{*} by {test_name,env,team,status}"
+            "query": "sum:synthetics.test_runs{*} by {test_name,env,team}"
           }
         ]
       }
-    ],
-    "title": "Synthetic Tests Inventory"
+    ]
   },
   "layout": {
     "x": 0,
     "y": 0,
     "width": 47,
-    "height": 15
+    "height": 14
   }
 }
